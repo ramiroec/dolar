@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Cambio Dólar PY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta de Cambio Dólar PY</h1>
+
+    <table>
+        <tr>
+            <th>Nombre Cambio</th>
+            <th>Compra</th>
+            <th>Venta</th>
+        </tr>
+        {% for cambio, valores in dolarpy_data.items() %}
+            <tr>
+                <td>{{ cambio }}</td>
+                <td>{{ valores.compra }}</td>
+                <td>{{ valores.venta }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
